@@ -45,6 +45,7 @@
 #define POSTGRES_H
 
 #include "c.h"
+#include <arpa/inet.h>
 
 #ifdef __cplusplus
 extern "C" {

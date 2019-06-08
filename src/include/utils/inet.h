@@ -15,6 +15,7 @@
 #define INET_H
 
 #include "fmgr.h"
+#include <sys/socket.h>
 
 /*
  *	This is the internal storage format for IP addresses

@@ -983,6 +983,9 @@ PING_HOST () {
 		openbsd )
 			OUTPUT=$($PING $PING_TIME $TARGET_HOST 2>&1 || $PING6 $PING_TIME $TARGET_HOST 2>&1)
                         ;;
+		freebsd )
+			OUTPUT=$($PING $PING_TIME $TARGET_HOST 2>&1 || $PING6 $PING_TIME $TARGET_HOST 2>&1)
+                        ;;
 		* )
 			OUTPUT=$($PING $TARGET_HOST $PING_TIME 2>&1)
 	esac

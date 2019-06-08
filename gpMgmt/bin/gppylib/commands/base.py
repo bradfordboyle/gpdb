@@ -447,7 +447,7 @@ class LocalExecutionContext(ExecutionContext):
         # executable='/bin/bash' is to ensure the shell is bash.  bash isn't the
         # actual command executed, but the shell that command string runs under.
         self.proc = gpsubprocess.Popen(cmd.cmdStr, env=None, shell=True,
-                                       executable='/bin/bash',
+                                       executable='/usr/local/bin/bash',
                                        stdin=subprocess.PIPE,
                                        stderr=subprocess.PIPE,
                                        stdout=subprocess.PIPE, close_fds=True)

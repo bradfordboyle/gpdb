@@ -1214,8 +1214,8 @@ case $OS_TYPE in
 		LIB_TYPE="LD_LIBRARY_PATH"
 		PG_METHOD="ident"
 		HOST_ARCH_TYPE="uname -m"
-		NOLINE_ECHO="$ECHO -e"
-		DEFAULT_LOCALE_SETTING=en_US.utf8
+		NOLINE_ECHO="$ECHO"
+		DEFAULT_LOCALE_SETTING=en_US.UTF-8
 		PING_TIME="-c 1"
 		;;
 	openbsd ) IPV4_ADDR_LIST_CMD="ifconfig -a inet"

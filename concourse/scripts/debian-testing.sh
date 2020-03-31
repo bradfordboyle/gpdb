@@ -15,10 +15,6 @@ apt-get install -y locales
 sed -i 's/^# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 
-# install missing deps
-# XXX: add this deps into debian/control
-apt-get install -y openssh-server less net-tools
-
 # configure gpadmin user
 useradd -U -G sudo,tty -m -s /bin/bash gpadmin
 echo "gpadmin:password" | chpasswd gpadmin
@@ -51,7 +47,7 @@ export NUM_PRIMARY_MIRROR_PAIRS='3'
 # start demo cluster
 # XXX: PYTHONPATH is missing some paths
 # XXX: LD_LIBRARY_PATH is missing `x86_64-linux-gnu`
-sed -i 's@^PYTHONPATH=.*@PYTHONPATH=$GPHOME/lib/python:$GPHOME/lib/x86_64-linux-gnu/python@' /usr/lib/greenplum-db/6/greenplum_path.sh
+sed -i 's@^PYTHONPATH=.*@PYTHONPATH=$GPHOME/lib/x86_64-linux-gnu/python@' /usr/lib/greenplum-db/6/greenplum_path.sh
 sed -i 's@^LD_LIBRARY_PATH=.*@LD_LIBRARY_PATH=$GPHOME/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH-}@' /usr/lib/greenplum-db/6/greenplum_path.sh
 pushd /gpdb_src/gpAux/gpdemo || exit 1
 su gpadmin -c '. /usr/lib/greenplum-db/6/greenplum_path.sh; ./demo_cluster.sh -c'
